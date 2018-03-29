@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://NicYe.github.io">
-  <title>我的第一篇博客 | Nic Ye Notes - 随心笔记</title>
+  <title>react + typescript 项目搭建 Webpack 配置详解 | Nic Ye Notes - 随心笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12$ cd &amp;lt;your-project&amp;gt;$ npm init  ABC一个井两个井自带下划线 三个井也是自带下划线 分割线">
-<meta name="keywords" content="first">
+  <meta name="description" content="参与了 web 开发已经有一段日子了，积累的东西都在脑海中，觉得比较杂乱，最近想梳理一下，毕竟脑子的容量是有限的，整理一下，也让自己的脉络清晰一点。 工欲善其事，必先利其器，本文主要先讲解一下 react 项目的搭建，适合熟悉项目的开发，有一定的开发经验，并且想对 webpack 打包配置进行了解的人士。 搭建准备">
+<meta name="keywords" content="react,typescript,webpack,初学">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客">
-<meta property="og:url" content="https://NicYe.github.io/2018/03/19/My-New-Post/index.html">
+<meta property="og:title" content="react + typescript 项目搭建 Webpack 配置详解">
+<meta property="og:url" content="https://NicYe.github.io/2018/03/23/react-typescript-项目搭建/index.html">
 <meta property="og:site_name" content="Nic Ye Notes - 随心笔记">
-<meta property="og:description" content="12$ cd &amp;lt;your-project&amp;gt;$ npm init  ABC一个井两个井自带下划线 三个井也是自带下划线 分割线">
-<meta property="og:updated_time" content="2018-03-20T08:26:28.882Z">
+<meta property="og:description" content="参与了 web 开发已经有一段日子了，积累的东西都在脑海中，觉得比较杂乱，最近想梳理一下，毕竟脑子的容量是有限的，整理一下，也让自己的脉络清晰一点。 工欲善其事，必先利其器，本文主要先讲解一下 react 项目的搭建，适合熟悉项目的开发，有一定的开发经验，并且想对 webpack 打包配置进行了解的人士。 搭建准备">
+<meta property="og:image" content="https://nicye.github.io/img/react.jpeg">
+<meta property="og:updated_time" content="2018-03-29T03:35:43.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一篇博客">
-<meta name="twitter:description" content="12$ cd &amp;lt;your-project&amp;gt;$ npm init  ABC一个井两个井自带下划线 三个井也是自带下划线 分割线">
+<meta name="twitter:title" content="react + typescript 项目搭建 Webpack 配置详解">
+<meta name="twitter:description" content="参与了 web 开发已经有一段日子了，积累的东西都在脑海中，觉得比较杂乱，最近想梳理一下，毕竟脑子的容量是有限的，整理一下，也让自己的脉络清晰一点。 工欲善其事，必先利其器，本文主要先讲解一下 react 项目的搭建，适合熟悉项目的开发，有一定的开发经验，并且想对 webpack 打包配置进行了解的人士。 搭建准备">
+<meta name="twitter:image" content="https://nicye.github.io/img/react.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="Nic Ye Notes - 随心笔记" type="application/atom+xml">
   
@@ -154,31 +156,53 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-My-New-Post" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-react-typescript-项目搭建" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      我的第一篇博客
+      react + typescript 项目搭建 Webpack 配置详解
     </h1>
   
 
         
-        <a href="/2018/03/19/My-New-Post/" class="archive-article-date">
-  	<time datetime="2018-03-19T10:09:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-19</time>
+        <a href="/2018/03/23/react-typescript-项目搭建/" class="archive-article-date">
+  	<time datetime="2018-03-23T12:54:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> &lt;your-project&gt;</span><br><span class="line">$ npm init</span><br></pre></td></tr></table></figure>
+        <p><img src="/img/react.jpeg" alt="react"><br>参与了 web 开发已经有一段日子了，积累的东西都在脑海中，觉得比较杂乱，最近想梳理一下，毕竟脑子的容量是有限的，整理一下，也让自己的脉络清晰一点。</p>
+<p>工欲善其事，必先利其器，本文主要先讲解一下 react 项目的搭建，适合熟悉项目的开发，有一定的开发经验，并且想对 webpack 打包配置进行了解的人士。</p>
+<h1 id="搭建准备"><a href="#搭建准备" class="headerlink" title="搭建准备"></a>搭建准备</h1>  <a id="more"></a>
+<h2 id="基本知识了解："><a href="#基本知识了解：" class="headerlink" title="基本知识了解："></a>基本知识了解：</h2><ul>
+<li>-react：<a href="https://www.jianshu.com/p/ae482813b791" target="_blank" rel="noopener">React 简单介绍 –简书</a></li>
+<li>-typescript：JavaScript 的超集（语法糖？），typescript 的强类型检查，与 react 再搭配不过了，用 react 写组件时，props 和 state 数据在引用之前，先声明类型，可以尽量避免与减少开发过程中出现错误的可能性，很大程度的提高代码质量。</li>
+<li><p>-webpack：webpack 当下流行的 JavaScript 模块化打包工具，方便前端开发与各种依赖的开发打包管理。</p>
+<p>本文主要以 npm 安装，也可根据个人习惯使用 yarn<br>预安装：node ， 本文撰写时：webpack 最高版本为 4.0</p>
+</li>
+</ul>
+<h2 id="初始化文件夹-react-proj"><a href="#初始化文件夹-react-proj" class="headerlink" title="初始化文件夹 react_proj"></a>初始化文件夹 react_proj</h2><p>新建一个文件夹，命名为 react_proj</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir react_proj &amp;&amp; <span class="built_in">cd</span> react_proj</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="ABC"><a href="#ABC" class="headerlink" title="ABC"></a>ABC</h3><h1 id="一个井"><a href="#一个井" class="headerlink" title="一个井"></a>一个井</h1><h2 id="两个井"><a href="#两个井" class="headerlink" title="两个井"></a>两个井</h2><p>自带下划线</p>
-<h3 id="三个井"><a href="#三个井" class="headerlink" title="三个井"></a>三个井</h3><p>也是自带下划线</p>
-<p>分割线</p>
+<p>初始化文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">$ npm init</span><br><span class="line"></span><br><span class="line">//接下来会出现一系列的选项</span><br><span class="line">//选择默认 ， 回车</span><br><span class="line"></span><br><span class="line">package name: (react_proj)</span><br><span class="line">version: (1.0.0)</span><br><span class="line">description: A react project</span><br><span class="line">entry point: (index.js)</span><br><span class="line"><span class="built_in">test</span> <span class="built_in">command</span>:</span><br><span class="line">git repository:</span><br><span class="line">keywords:</span><br><span class="line">author:Nic Ye</span><br><span class="line">license: (ISC)</span><br><span class="line">About to write to /Users/xiexiaodong/Desktop/react_proj/package.json:</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"react_proj"</span>,</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="string">"description"</span>: <span class="string">"A react project"</span>,</span><br><span class="line">  <span class="string">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"author"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Is this ok? (yes)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="开始项目"><a href="#开始项目" class="headerlink" title="开始项目"></a>开始项目</h1><h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><p>安装</p>
+<ul>
+<li>-webpack</li>
+<li>-react</li>
+<li>-react-dom</li>
+<li>-@types/react</li>
+<li>-@types/react-dom<br>(<strong>注：@types/react @types/react-dom 于 typescript 编写 react 时使用，所以必须安装</strong>)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save webpack react react-dom @types/react @types/react-dom</span><br><span class="line"></span><br><span class="line">+ @types/react-dom@16.0.4</span><br><span class="line">+ react@16.2.0</span><br><span class="line">+ react-dom@16.2.0</span><br><span class="line">+ @types/react@16.0.40</span><br><span class="line">+ webpack@4.2.0</span><br></pre></td></tr></table></figure>
+<h3 id="接下来，配置项目目录如下"><a href="#接下来，配置项目目录如下" class="headerlink" title="接下来，配置项目目录如下"></a>接下来，配置项目目录如下</h3><p>react_proj<br>| - src<br>| - - components<br>| - - -HelloReact.tsx<br>| - - main.js<br>| - index.html<br>| - webpack.config.js<br>| - package-lock.json<br>| - package.json</p>
+<p>还没写完 今晚继续 QaQ</p>
 
       
 
@@ -213,7 +237,19 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">first</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">typescript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">初学</a>
         		</li>
       		
 		</ul>
@@ -269,7 +305,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://NicYe.github.io/2018/03/19/My-New-Post/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://NicYe.github.io/2018/03/23/react-typescript-项目搭建/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +319,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/23/react-typescript-项目搭建/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          react + typescript 项目搭建 Webpack 配置详解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2018/03/19/My-New-Post/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一篇博客</div>
       <i class="icon-circle-right"></i>
     </a>
   
