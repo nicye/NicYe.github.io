@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://NicYe.github.io">
-  <title>Nic Ye Notes - 随心笔记</title>
+  <title>Archives: 2018/5 | Nic Ye Notes - 随心笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Nic Ye Notes - 随心笔记">
-<meta property="og:url" content="https://NicYe.github.io/index.html">
+<meta property="og:url" content="https://NicYe.github.io/archives/2018/05/index.html">
 <meta property="og:site_name" content="Nic Ye Notes - 随心笔记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nic Ye Notes - 随心笔记">
@@ -151,83 +151,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-JavaScript-避免全局变量污染的小方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/05/01/JavaScript-避免全局变量污染的小方法/" class="archive-article-date">
+  	<time datetime="2018-05-01T09:11:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-01</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/01/JavaScript-避免全局变量污染的小方法/">JavaScript 避免全局变量污染的方法</a>
+      <a class="archive-article-title" href="/2018/05/01/JavaScript-避免全局变量污染的小方法/">JavaScript 避免全局变量污染的方法</a>
     </h1>
   
 
-        
-        <a href="/2018/05/01/JavaScript-避免全局变量污染的小方法/" class="archive-article-date">
-  	<time datetime="2018-05-01T09:11:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>在全局环境下定义 <code>var obj = {}</code>,这样在任何位置都可以调用这个变量，并且这个变量是唯一的。</p>
-<p>但是，变量 <code>obj</code> 在使用的同时会对命名空间造成污染。在项目中，如果没有很好的管理和限制，会存在很多的全局变量，同时它们很容易被覆盖，所以我们应该尽量避免使用全局变量，如果实在需要使用，有以下几个方法可以便于我们管理</p>
-<hr>
-<p>1.<strong>使用命名空间</strong><br>    定义一个对象作为命名空间，用以存放相应页面的变量</p>
-<pre><code>var namespace = {
-    a: function(){someFun},
-    b: function(){someFun}`
-    ...
-};
-</code></pre><hr>
-<p>但手动创建项目庞大时会变得复杂且难以控制，可以编写一个动态创建的function</p>
-<pre><code>var myApp = {};
-myApp.namespace = function( name ){
-    var parts = name.split(&apos;.&apos;);
-    var current = myApp;
-    for( var i in parts){
-        if(!current[ parts[ i ] ]){
-            current[ parts[ i ] ] = {}
-        }
-        current = current[ parts[ i ] ]
-    }
-};
-myApp.namespace(nic.ye);
-
-console.log(myApp);
-
-//结果
-myApp = {
-    nic: {
-        ye: {}
-    }
-}
-</code></pre><p>2.<strong>使用闭包封装私有变量</strong><br>    将一些变量封装在闭包内部，通过暴露一些接口与外界沟通</p>
-<pre><code>var user = (function(){ 
-    var __name = &apos;sven&apos;,
-        __age = 29;
-    return {
-    getUserInfo: function(){
-        return __name + &apos;-&apos; + __age; 
-        }
-    }，
-    setName( name ){
-        __name = name;
-    },
-    setAge( age ){
-        __age = age;
-    }
-})();
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -243,41 +194,19 @@ myApp = {
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/01/JavaScript-避免全局变量污染的小方法/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -299,9 +228,9 @@ myApp = {
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
