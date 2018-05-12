@@ -151,6 +151,106 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript-单例模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/12/JavaScript-单例模式/">JavaScript --单例模式</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/12/JavaScript-单例模式/" class="archive-article-date">
+  	<time datetime="2018-05-12T14:34:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="单例模式：保证一个类有且仅有一个实例，并提供一个全局访问点"><a href="#单例模式：保证一个类有且仅有一个实例，并提供一个全局访问点" class="headerlink" title="单例模式：保证一个类有且仅有一个实例，并提供一个全局访问点"></a>单例模式：保证一个类有且仅有一个实例，并提供一个全局访问点</h3><h3 id="实现方法：通过闭包的作用域封装某个变量，将其用于存放与判断是否创建过此类，实现单例"><a href="#实现方法：通过闭包的作用域封装某个变量，将其用于存放与判断是否创建过此类，实现单例" class="headerlink" title="实现方法：通过闭包的作用域封装某个变量，将其用于存放与判断是否创建过此类，实现单例"></a>实现方法：通过闭包的作用域封装某个变量，将其用于存放与判断是否创建过此类，实现单例</h3><p>eg：</p>
+<pre><code>var createSingleDiv = (function(){
+    var div;
+    return function(){
+        if(!div){
+            div = document.createElement(&quot;div);
+            ...
+        }
+        return div;
+    }
+})()
+</code></pre><hr>
+<h3 id="惰性通用单例"><a href="#惰性通用单例" class="headerlink" title="惰性通用单例"></a>惰性通用单例</h3><pre><code>var getSingle = function(fn){
+    var result;
+    return function(){
+        result || result = fn.apply(this, arguments);
+    }
+};
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">单例模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">惰性单例</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/12/JavaScript-单例模式/">阅读全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaScript-避免全局变量污染的小方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -174,6 +274,7 @@
         <hr>
 <p>在全局环境下定义 <code>var obj = {}</code>,这样在任何位置都可以调用这个变量，并且这个变量是唯一的。</p>
 <p>但是，变量 <code>obj</code> 在使用的同时会对命名空间造成污染。在项目中，如果没有很好的管理和限制，会存在很多的全局变量，同时它们很容易被覆盖，所以我们应该尽量避免使用全局变量，如果实在需要使用，有以下几个方法可以便于我们管理</p>
+<p>&lt; !–more–&gt;</p>
 <hr>
 <p>1.<strong>使用命名空间</strong><br>    定义一个对象作为命名空间，用以存放相应页面的变量</p>
 <pre><code>var namespace = {
@@ -375,6 +476,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">全局变量</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单例模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">惰性单例</a>
               </li>
             
             <div class="clearfix"></div>

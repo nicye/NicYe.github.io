@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://NicYe.github.io">
   <title>JavaScript 避免全局变量污染的方法 | Nic Ye Notes - 随心笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在全局环境下定义 var obj = {},这样在任何位置都可以调用这个变量，并且这个变量是唯一的。 但是，变量 obj 在使用的同时会对命名空间造成污染。在项目中，如果没有很好的管理和限制，会存在很多的全局变量，同时它们很容易被覆盖，所以我们应该尽量避免使用全局变量，如果实在需要使用，有以下几个方法可以便于我们管理  1.使用命名空间    定义一个对象作为命名空间，用以存放相应页面的变量 v">
+  <meta name="description" content="在全局环境下定义 var obj = {},这样在任何位置都可以调用这个变量，并且这个变量是唯一的。 但是，变量 obj 在使用的同时会对命名空间造成污染。在项目中，如果没有很好的管理和限制，会存在很多的全局变量，同时它们很容易被覆盖，所以我们应该尽量避免使用全局变量，如果实在需要使用，有以下几个方法可以便于我们管理 &amp;lt; !–more–&amp;gt;  1.使用命名空间    定义一个对象作为命">
 <meta name="keywords" content="JavaScript,全局变量">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 避免全局变量污染的方法">
 <meta property="og:url" content="https://NicYe.github.io/2018/05/01/JavaScript-避免全局变量污染的小方法/index.html">
 <meta property="og:site_name" content="Nic Ye Notes - 随心笔记">
-<meta property="og:description" content="在全局环境下定义 var obj = {},这样在任何位置都可以调用这个变量，并且这个变量是唯一的。 但是，变量 obj 在使用的同时会对命名空间造成污染。在项目中，如果没有很好的管理和限制，会存在很多的全局变量，同时它们很容易被覆盖，所以我们应该尽量避免使用全局变量，如果实在需要使用，有以下几个方法可以便于我们管理  1.使用命名空间    定义一个对象作为命名空间，用以存放相应页面的变量 v">
-<meta property="og:updated_time" content="2018-05-01T10:00:11.915Z">
+<meta property="og:description" content="在全局环境下定义 var obj = {},这样在任何位置都可以调用这个变量，并且这个变量是唯一的。 但是，变量 obj 在使用的同时会对命名空间造成污染。在项目中，如果没有很好的管理和限制，会存在很多的全局变量，同时它们很容易被覆盖，所以我们应该尽量避免使用全局变量，如果实在需要使用，有以下几个方法可以便于我们管理 &amp;lt; !–more–&amp;gt;  1.使用命名空间    定义一个对象作为命">
+<meta property="og:updated_time" content="2018-05-01T10:06:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 避免全局变量污染的方法">
-<meta name="twitter:description" content="在全局环境下定义 var obj = {},这样在任何位置都可以调用这个变量，并且这个变量是唯一的。 但是，变量 obj 在使用的同时会对命名空间造成污染。在项目中，如果没有很好的管理和限制，会存在很多的全局变量，同时它们很容易被覆盖，所以我们应该尽量避免使用全局变量，如果实在需要使用，有以下几个方法可以便于我们管理  1.使用命名空间    定义一个对象作为命名空间，用以存放相应页面的变量 v">
+<meta name="twitter:description" content="在全局环境下定义 var obj = {},这样在任何位置都可以调用这个变量，并且这个变量是唯一的。 但是，变量 obj 在使用的同时会对命名空间造成污染。在项目中，如果没有很好的管理和限制，会存在很多的全局变量，同时它们很容易被覆盖，所以我们应该尽量避免使用全局变量，如果实在需要使用，有以下几个方法可以便于我们管理 &amp;lt; !–more–&amp;gt;  1.使用命名空间    定义一个对象作为命">
   
     <link rel="alternative" href="/atom.xml" title="Nic Ye Notes - 随心笔记" type="application/atom+xml">
   
@@ -177,6 +177,7 @@
         <hr>
 <p>在全局环境下定义 <code>var obj = {}</code>,这样在任何位置都可以调用这个变量，并且这个变量是唯一的。</p>
 <p>但是，变量 <code>obj</code> 在使用的同时会对命名空间造成污染。在项目中，如果没有很好的管理和限制，会存在很多的全局变量，同时它们很容易被覆盖，所以我们应该尽量避免使用全局变量，如果实在需要使用，有以下几个方法可以便于我们管理</p>
+<p>&lt; !–more–&gt;</p>
 <hr>
 <p>1.<strong>使用命名空间</strong><br>    定义一个对象作为命名空间，用以存放相应页面的变量</p>
 <pre><code>var namespace = {
@@ -329,6 +330,20 @@ myApp = {
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2018/05/12/JavaScript-单例模式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JavaScript --单例模式
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -454,6 +469,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">全局变量</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单例模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">惰性单例</a>
               </li>
             
             <div class="clearfix"></div>
